@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gymkhana"
+    }
+  },
+  "defaultProject": "gymkhana",
+  "cli": {
+    "analytics": "91262f5d-cff7-49f5-8675-d92b3908e3bb"
+  }
 }
