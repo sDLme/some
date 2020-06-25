@@ -1,0 +1,32 @@
+
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <input 
+        class="form-control"  
+        type="text" 
+        placeholder="Category name"
+        formControlName="title">
+    
+        <div *ngIf="categoryForm.get('title').invalid && (categoryForm.get('title').dirty || categoryForm.get('title').touched)"
+             class="alert alert-danger">
+             <app-validation-errors [errors]="categoryForm.get('title').errors" ></app-validation-errors> 
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <input 
+        class="form-control"  
+        type="textarea" 
+        placeholder="Category description"
+        formControlName="description">
+      </div>  
+
+
+      <button 
+        class="btn btn-success" 
+        type="submit">Create category</button>
+
+
+</form>

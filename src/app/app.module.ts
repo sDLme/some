@@ -5,9 +5,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { MembersModule } from './features/members/members.module';
+import { CategoryModule } from './features/category/category.module';
 
 import { AppComponent } from './app.component';
 import { ScoreboardComponent } from './features/scoreboard/scoreboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { ScoreboardComponent } from './features/scoreboard/scoreboard.component'
     BrowserModule,
     AppRoutingModule,
     CoreModule.forRoot(),
-    MembersModule
+    MembersModule,
+    CategoryModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

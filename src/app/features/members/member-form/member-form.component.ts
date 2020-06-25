@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+// services
+import { MembersHandlerService } from '../members-handler.service';
+
+// models
+import { Category } from '../../category/category.model';
+import { CategoryHandlerService } from '../../category/category-handler.service';
 
 @Component({
   selector: 'app-member-form',
@@ -9,10 +16,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class MemberFormComponent implements OnInit {
 
   public membersForm: FormGroup;
+  public categoryList: Category[];
 
   constructor(
     private fb: FormBuilder,
-  ) { }
+    private membersHandlerService: MembersHandlerService,
+    private categoryService: CategoryHandlerService
+  ) {
+
+    this.categoryList = this.categoryService.getcategory()
+   }
 
   ngOnInit(): void {
     this.createForm()
@@ -20,19 +33,22 @@ export class MemberFormComponent implements OnInit {
 
   private createForm() {
     this.membersForm = this.fb.group({
-      name: '',
+      name: ['', Validators.required],
       email: '',
-      vehicle: '',
-      cubature: '',
-      weight: '',
+      vehicle: ['', Validators.required],
+      cubature: ['', Validators.required],
+      weight: ['', Validators.required],
+      category: [null, Validators.required],
       time: ''
     })
 
   }
 
   public onSubmit() {
-    console.log(this.membersForm)
-    
+    this.membersHandlerService.setNewMember(this.membersForm.value)    
   };
+
+
+  
 
 }

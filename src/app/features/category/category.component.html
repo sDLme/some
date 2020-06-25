@@ -1,0 +1,11 @@
+
+<app-category-form></app-category-form>
+
+<hr>
+
+<h2>Categories list</h2>
+<ul *ngFor="let category of categoryList">
+    <li>
+        <h3><b>{{ category.title }}</b></h3> - <span>{{ category.description }}</span>
+    </li>
+</ul>

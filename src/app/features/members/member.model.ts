@@ -4,13 +4,16 @@ export class Member {
     public vehicle: string;
     public cubature: string;
     public weight: string;
-    public time: string;
+    public category: string;
+    public time: any;
   
-    constructor(name: string, motoName: string, cubature: string, weight: string, time: string) {
+    constructor(name: string, email: string, vehicle: string, cubature: string, weight: string, category: string, time:  any) {
       this.name = name;
-      this.vehicle = motoName;
+      this.email = email;
+      this.vehicle = vehicle;
       this.cubature = cubature;
       this.weight = weight;
+      this.category = category;
       this.time = time;
     }
   }

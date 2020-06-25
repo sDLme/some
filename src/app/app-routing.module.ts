@@ -4,12 +4,14 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 // components 
 import { MembersComponent } from './features/members/members.component';
 import { ScoreboardComponent } from './features/scoreboard/scoreboard.component';
+import { CategoryComponent } from './features/category/category.component';
 
 
 
 const routes: Routes = [
   { path: '', component: MembersComponent },
   { path: 'scoreboard', component: ScoreboardComponent },
+  { path: 'category', component: CategoryComponent },
   ];
 
 @NgModule({

@@ -10,6 +10,12 @@ class="col-8 m-auto"
   type="text" 
   placeholder="Name"
   formControlName="name">
+
+  <div *ngIf="membersForm.get('name').invalid && (membersForm.get('name').dirty || membersForm.get('name').touched)"
+         class="alert alert-danger">
+         <app-validation-errors [errors]="membersForm.get('name').errors" ></app-validation-errors> 
+  </div>
+
 </div>
 
 
@@ -19,6 +25,12 @@ class="col-8 m-auto"
     type="email" 
     placeholder="Email"
     formControlName="email">
+
+    <div *ngIf="membersForm.get('email').invalid && (membersForm.get('email').dirty || membersForm.get('email').touched)"
+         class="alert alert-danger">
+         <app-validation-errors [errors]="membersForm.get('email').errors" ></app-validation-errors> 
+    </div>
+
   </div>
 
   
@@ -26,8 +38,14 @@ class="col-8 m-auto"
     <input  
     class="form-control" 
     type="text" 
-    placeholder="Name of moto"
+    placeholder="Vehicle"
     formControlName="vehicle">
+
+    <div *ngIf="membersForm.get('vehicle').invalid && (membersForm.get('vehicle').dirty || membersForm.get('vehicle').touched)"
+         class="alert alert-danger">
+         <app-validation-errors [errors]="membersForm.get('vehicle').errors" ></app-validation-errors> 
+   </div>
+
   </div>
 
   
@@ -37,6 +55,12 @@ class="col-8 m-auto"
     type="text" 
     placeholder="Cubature"
     formControlName="cubature">
+
+    <div *ngIf="membersForm.get('cubature').invalid && (membersForm.get('cubature').dirty || membersForm.get('cubature').touched)"
+         class="alert alert-danger">
+         <app-validation-errors [errors]="membersForm.get('cubature').errors" ></app-validation-errors> 
+    </div>
+
   </div>
 
 
@@ -46,22 +70,52 @@ class="col-8 m-auto"
     type="number" 
     placeholder="Weight"
     formControlName="weight">
-  </div>
 
+    <div *ngIf="membersForm.get('weight').invalid && (membersForm.get('weight').dirty || membersForm.get('weight').touched)"
+         class="alert alert-danger">
+         <app-validation-errors [errors]="membersForm.get('weight').errors" ></app-validation-errors> 
+    </div>
+
+  </div>
 
   <div class="form-group">
+    <ng-select
+    class="category-select"
+    hideSelected="true"
+    formControlName="category"
+    [items]="categoryList"
+    [searchable]="false"
+    [clearable]="false">
+
+    <ng-template ng-label-tmp let-item="item">
+      {{ item.title  }}
+    </ng-template>
+
+    <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+      {{ item.title  }} - {{ item.description }}
+    </ng-template>
+
+  </ng-select>
+
+  <div *ngIf="membersForm.get('category').invalid && (membersForm.get('category').dirty || membersForm.get('category').touched)"
+         class="alert alert-danger">
+         <app-validation-errors [errors]="membersForm.get('category').errors" ></app-validation-errors> 
+    </div>
+
+ </div>
+
+
+  <!-- <div class="form-group">
     <input 
     class="form-control"  
-    type="time" 
-    step="1"
+    type="number" 
     placeholder="Time"
     formControlName="time">
-  </div>
+  </div> -->
   
     
   <button 
   class="btn btn-success" 
-  type="submit"
-  >Submit</button>
+  type="submit">Submit</button>
 
 </form>
