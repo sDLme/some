@@ -1,0 +1,27 @@
+<div class="table-wrapp">
+
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let title of displayedColumns">{{ title  | uppercase }}</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let item of data | keyvalue">
+      <tr>
+        <td><b>{{item.key }} - category</b> </td>
+      </tr>
+      <tr *ngFor="let member of item.value | keyvalue" [routerLink]="['/members', member.value.name]">
+        <td>{{ member.value.name }}</td>
+        <td>{{ member.value.vehicle }}</td>
+        <td>{{ member.value.cubature }}</td>
+        <td>{{ member.value.weight }}</td>
+        <td>{{ member.value.category.title}}</td>
+        <td>{{ member.value.time }}</td>
+        <td>{{ member.value.penalty }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<hr>

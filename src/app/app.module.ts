@@ -10,12 +10,16 @@ import { CategoryModule } from './features/category/category.module';
 import { AppComponent } from './app.component';
 import { ScoreboardComponent } from './features/scoreboard/scoreboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegistrationMembersComponent } from './features/registration-members/registration-members.component';
+import { RoundComponent } from './features/scoreboard/round/round.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ScoreboardComponent,
+    RegistrationMembersComponent,
+    RoundComponent,
   ],
   imports: [
     BrowserModule,
