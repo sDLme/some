@@ -1,1 +1,50 @@
-<app-member-form></app-member-form>
+
+
+
+
+<div>
+
+    <ul class="list-group border">
+        <li class="list-group-item"> 
+            <p>Name - {{ mamber.name }}</p>
+        </li>
+        <li class="list-group-item"> 
+            <p>Email - {{ mamber.email }}</p>
+        </li>
+        <li class="list-group-item"> 
+            <p>Vehicle - {{ mamber.vehicle }}</p>
+        </li>
+        <li class="list-group-item"> 
+            <p>Cubature - {{ mamber.cubature }}</p>
+        </li>
+        <li class="list-group-item"> 
+            <p>Weight - {{ mamber.weight }}</p>
+        </li>
+        <li class="list-group-item"> 
+            <p>Category - {{ mamber.category.title }}</p>
+        </li>
+        <li class="list-group-item">
+          <form class="form-inline">
+            <div class="form-group mb-7">
+              <label>
+                Время прохождения круга
+                <input type="text" class="form-control">
+              </label>
+            </div>
+
+            <div class="form-group mb-2">
+             <label>
+               Штрафное время
+               <input type="text" class="form-control">
+             </label>
+          </div>
+          <button 
+            type="submit" 
+            class="btn btn-primary mb-2">Save</button>
+          
+          </form>
+
+        </li>
+    </ul>
+
+</div> 

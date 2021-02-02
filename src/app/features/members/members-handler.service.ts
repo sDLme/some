@@ -9,11 +9,11 @@ export class MembersHandlerService {
   private static instance: MembersHandlerService;
 
   private membersList: Member[] = [
-    new Member( 'Sergey', 'test@gmaol.com', 'Honda 600', '600', '250', 'A', 2),
-    new Member( 'Vadim', 'test@gmaol.com', 'Yamaha 1300', '1300', '350', 'C', 3),
-    new Member( 'Vadim2', 'test@gmaol.com', 'Yamaha 1300', '1300', '550',  'D', 6),
-    new Member( 'Alex', 'test@gmaol.com', 'Kavasacy 1400', '1400',  '300', 'D',  4),
-    new Member( 'Pit', 'test@gmaol.com', 'Suzuky 400', '400',  '200', 'B', 8),
+    new Member( 'Sergey', 'test@gmaol.com', 'Honda 600', '600', '250', 'A', 2, 2),
+    new Member( 'Vadim', 'test@gmaol.com', 'Yamaha 1300', '1300', '350', 'C', 3,1),
+    new Member( 'Vadim2', 'test@gmaol.com', 'Yamaha 1300', '1300', '550',  'D', 6, 5),
+    new Member( 'Alex', 'test@gmaol.com', 'Kavasacy 1400', '1400',  '300', 'D',  4, 4),
+    new Member( 'Pit', 'test@gmaol.com', 'Suzuky 400', '400',  '200', 'B', 8, 7),
   ];
 
   public static getInstance(): MembersHandlerService {

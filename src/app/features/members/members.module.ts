@@ -25,6 +25,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NgSelectModule,
     SharedModule
   ],
-  exports: []
+  exports: [MemberFormComponent]
 })
 export class MembersModule { }

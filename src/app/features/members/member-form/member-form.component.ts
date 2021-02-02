@@ -39,13 +39,15 @@ export class MemberFormComponent implements OnInit {
       cubature: ['', Validators.required],
       weight: ['', Validators.required],
       category: [null, Validators.required],
-      time: ''
+      time: '',
+      penalty: ''
     })
 
   }
 
   public onSubmit() {
-    this.membersHandlerService.setNewMember(this.membersForm.value)    
+    this.membersHandlerService.setNewMember(this.membersForm.value) 
+    this.membersForm.value('')   
   };
 
 
